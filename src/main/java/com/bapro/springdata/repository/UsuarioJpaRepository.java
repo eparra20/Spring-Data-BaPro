@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.bapro.springdata.model.Usuario;
 
-
+@Repository
 public interface UsuarioJpaRepository extends JpaRepository<Usuario, Integer>{
 
 }
