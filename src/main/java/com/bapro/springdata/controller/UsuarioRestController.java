@@ -49,9 +49,8 @@ public class UsuarioRestController {
 	}
 	
 	@DeleteMapping("{id}")
-	public Usuario deleteUsuario(@PathVariable("id") Integer id) {
+	public void deleteUsuario(@PathVariable("id") Integer id) {
 		usuarioJpaRepository.deleteById(id);
-		return null;
 	}
 	
 
