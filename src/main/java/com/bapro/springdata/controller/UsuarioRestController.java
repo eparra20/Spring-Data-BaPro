@@ -16,7 +16,7 @@ import com.bapro.springdata.model.Usuario;
 import com.bapro.springdata.repository.UsuarioJpaRepository;
 
 @RestController
-@RequestMapping("usuarios")
+@RequestMapping("api/usuarios")
 public class UsuarioRestController {
 	
 	/**

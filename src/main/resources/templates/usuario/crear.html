@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Digital Movies</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/css/business-frontpage.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Digital Movies</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="usuarios">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" href="peliculas">Peliculas</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Header -->
+<header class="bg-primary py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1>Bienvenides a Digital Movies!</h1>
+                <p class="lead">Un proyecto demo utilizando Spring Boot, Thymeleaf,Spring Data y Bootstrap</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-3 mb-4">
+            <h2>Menu</h2>
+            <hr>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="/usuarios">Lista de Usuarios</a></li>
+            </ul>
+            <ul class="nav nav-pills nav-stacked">
+                <li><a href="#">Crear Usuario</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-9 mb-6">
+            <h2>Registrar nuevo Usuarios</h2>
+            <hr>
+            <form method="post" th:action="@{/usuarios/crear}" th:object="${usuario}">
+                <div class="form-group">
+                    <label for="formGroupExampleInputDni">DNI</label>
+                    <input type="text" class="form-control" id="formGroupExampleInputDni" placeholder="Ingresar DNI" th:field="*{dni}">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInputNombre">Nombre</label>
+                    <input type="text" class="form-control" id="formGroupExampleInputNombre" placeholder="Ingresar Nombre" th:field="*{nombre}">
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInputApellido">Apellido</label>
+                    <input type="text" class="form-control" id="formGroupExampleInputApellido" placeholder="Ingresar Apellido" th:field="*{apellido}">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="activo" name="activo" th:field="*{activo}">
+                    <label class="form-check-label" for="activo">
+                        Activo
+                    </label>
+                </div>
+
+                 <button type="submit" class="btn btn-primary">Registrar</button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>
+<!-- /.container -->
+
+<!-- Footer -->
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+    </div>
+    <!-- /.container -->
+</footer>
+
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

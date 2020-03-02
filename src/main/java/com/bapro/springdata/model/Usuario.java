@@ -17,7 +17,7 @@ public class Usuario {
 	 * Esta sera nuestra Primary KEY que adicionalmente estamos indicando que sera AUTO_INCREMENT
 	 */
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(nullable = false, unique = true)
