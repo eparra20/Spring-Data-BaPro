@@ -1,10 +1,8 @@
 package com.bapro.springdata.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
+
 /**
  * Tabla o Entidad Usuario
  * @author Eduar
@@ -27,14 +25,22 @@ public class Usuario {
 	private String nombre;
 	
 	private String apellido;
-	
+
+	@Column(nullable = false)
+	private String userName;
+
+	@Column(nullable = false)
+	private String password;
+
+
 	@Column(nullable = false)
 	private Boolean activo;
-	
+
+	@ManyToOne
+	private Rol rol;
+
 	public Usuario() {
-		
 	}
-	
 
 	public Usuario(Integer id, String dni, String nombre, String apellido, Boolean activo) {
 		this.id = id;
@@ -42,6 +48,22 @@ public class Usuario {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.activo = activo;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	public Integer getId() {
@@ -83,6 +105,12 @@ public class Usuario {
 	public void setActivo(Boolean activo) {
 		this.activo = activo;
 	}
-	
-	
+
+	public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
 }

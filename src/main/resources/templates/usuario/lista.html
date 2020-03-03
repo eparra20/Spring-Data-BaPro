@@ -83,6 +83,7 @@
                     <th scope="col">DNI</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Apellido</th>
+                    <th scope="col">Rol</th>
                     <th scope="col">activo</th>
                 </tr>
                 </thead>
@@ -92,6 +93,7 @@
                     <td th:text="${usuario.dni}"></td>
                     <td th:text="${usuario.nombre}"></td>
                     <td th:text="${usuario.apellido}"></td>
+                    <td th:text="${usuario.rol?.nombre}"></td>
                     <td th:text="${usuario.activo}"></td>
                 </tr>
                 </tbody>
