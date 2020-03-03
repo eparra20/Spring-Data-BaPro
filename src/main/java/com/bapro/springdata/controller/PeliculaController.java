@@ -3,6 +3,7 @@ package com.bapro.springdata.controller;
 import com.bapro.springdata.model.Usuario;
 import com.bapro.springdata.repository.UsuarioJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,7 @@ public class PeliculaController {
     private UsuarioJpaRepository usuarioJpaRepository;
 
     @GetMapping("")
+    @PreAuthorize("hasAuthority('ROL_ADMIN')")
     public String getPeliculas(Model model){
         return "pelicula/lista";
     }
